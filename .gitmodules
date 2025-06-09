@@ -1,0 +1,6 @@
+[submodule "forink-front"]
+	path = forink-front
+	url = https://github.com/For-In-K/forink-front.git
+[submodule "forink-back"]
+	path = forink-back
+	url = https://github.com/For-In-K/forink-back.git
