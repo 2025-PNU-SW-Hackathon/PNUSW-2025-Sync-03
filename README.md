@@ -22,7 +22,7 @@
 <img width="14784" height="11900" alt="service_archi_diagram" src="https://github.com/user-attachments/assets/bb1ed067-59e4-445a-90fc-ee34bb5a4920" />
 
 #### 2.1. 사용 기술
-##### 프론트엔드
+##### Frontend
 ![React](https://img.shields.io/badge/React%2019.1.0-20232a?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript%205.8.3-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite%207.0.0-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
@@ -38,7 +38,7 @@
     </div>
   </details>
 
-##### 백엔드
+##### Backend & DB
 ![Spring](https://img.shields.io/badge/Spring%206.2.8-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL%209.2.0-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
   <details>
@@ -67,7 +67,7 @@
     </div>
   </details>
 
-##### 스마트 컨트랙트
+##### Blockchain
 ![Solidity](https://img.shields.io/badge/Solidity%200.8.29-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white)
   <details>
     <summary>기타 기술스택</summary>
@@ -157,13 +157,37 @@
 > 위 레포지토리의 디렉토리 구조를 설명하세요.
 
 ### 4. 설치 및 사용 방법
-> 제품을 설치하기 위헤 필요한 소프트웨어 및 설치 방법을 작성하세요.
->
-> 제품을 설치하고 난 후, 실행 할 수 있는 방법을 작성하세요.
+##### Frontend
+```shell
+git clone https://github.com/For-In-K/forink-front.git
+cd ./forink-front
+npm install # + 기타 .env 환경변수 설정
+npm run dev
+```
+
+##### Backend & DB
+```shell
+git clone https://github.com/For-In-K/forink-back.git
+cd ./forink-back # + .env 파일 생성 및 DB 접속 정보 입력
+docker-compose -f ./docker/docker-compose.yml up --build -d
+```
+
+##### AI
+```shell
+git clone https://github.com/For-In-K/forink-ai.git
+cd ./forink-ai/codes
+pip install -r requirements.txt # + .env 파일에 API KEY 및 DB 접속 정보 입력
+uvicorn router:app --reload --host 0.0.0.0 --port 8000
+```
+##### Blockchain
+```shell
+git clone https://github.com/For-In-K/forink-contracts.git
+cd ./forink-contracts # + .env 파일 생성 및 PRIVATE_KEY, SEPOLIA_RPC_URL, ETHERSCAN_API_KEY 입력
+forge create src/GuideVerification.sol:GuideVerification --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY # 스마트 컨트랙트 배포 주소 확인
+```
 
 ### 5. 소개 및 시연 영상
-> 프로젝트에 대한 소개와 시연 영상을 넣으세요.
-> 프로젝트 소개 동영상을 교육원 메일(swedu@pusan.ac.kr)로 제출 이후 센터에서 부여받은 youtube URL주소를 넣으세요.
+
 
 ### 6. 팀 소개
 > 팀원 소개 & 구성원 별 역할 분담 & 간단한 연락처를 작성하세요.
