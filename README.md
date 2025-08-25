@@ -188,8 +188,8 @@ forge create src/GuideVerification.sol:GuideVerification --rpc-url $SEPOLIA_RPC_
 
 ### 5. 소개 및 시연 영상
 
+https://github.com/user-attachments/assets/6af46090-f4c8-47d5-956c-85a9e0a820ec
+<caption>10MB 제한으로 일부 기능 생략 후 시연한 영상입니다.</caption>
 
-### 6. 팀 소개
+### 6. 팀 소개 및 해커톤 참여 후기
 > 팀원 소개 & 구성원 별 역할 분담 & 간단한 연락처를 작성하세요.
-### 7. 해커톤 참여 후기
-> 팀원 별 해커톤 참여 후기를 작성하세요.
