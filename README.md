@@ -225,7 +225,107 @@ _**다국어 지원**_: 사용자의 언어 설정에 맞춰 다국어로 소통
 <img width="22027" height="18015" alt="Group 73" src="https://github.com/user-attachments/assets/ad174768-60e7-4507-89b7-255b8cea50b7" />
 
 #### 3.4. 디렉토리 구조
-> 위 레포지토리의 디렉토리 구조를 설명하세요.
+
+##### Frontend
+```shell
+src/
+│
+├── 📁 apis/           # API 요청 함수 (axios 인스턴스)
+├── 🖼️ assets/         # 이미지, 아이콘, 로고 등 정적 파일
+│
+├── 📁 components/     # 🧩 재사용 가능한 UI 컴포넌트
+│   └── 📁 chatbot/     #    (예시: 챗봇 컴포넌트)
+│       ├── ChatWindow.tsx #  - 전체 챗봇 창
+│       ├── ChatLog.tsx    #  - 대화 기록 영역
+│       └── ...
+│
+├── 🏛️ constants/      # 변하지 않는 상수 데이터
+│
+├── 🪝 hooks/          # 비즈니스 로직 및 상태 관리 커스텀 훅
+│   └── useTranslation.ts  # 🌐 다국어 텍스트를 쉽게 사용하기 위한 커스텀 훅
+│
+├── 🏗️ layouts/        # 페이지 구조를 정의하는 레이아웃 (헤더, 푸터 등)
+│   └── 📁 Header/
+│       └── LanguageSelector.tsx # 🌐 언어 선택 UI 컴포넌트
+│
+├── 📄 pages/          # 각 라우팅 경로에 해당하는 페이지
+│   └── 📁 roadmap/    #    (예시: 로드맵 페이지)
+│       ├── RoadmapTypeSelectorPage.tsx # - 로드맵 타입 선택 페이지
+│       └── 📁 template/               #   - 로드맵 페이지에서 사용하는 템플릿 컴포넌트
+│           └── MilestoneNode.tsx     #     - 로드맵의 각 단계(마일스톤)
+│
+├── 🧭 routes/         # 페이지 라우팅 설정
+│
+├── ⚙️ services/       # API 호출 외의 비즈니스 로직
+│   └── translationService.ts # 🌐 번역 관련 서비스 로직
+│
+├── 🗄️ stores/         # 전역 상태 관리 (Zustand)
+│
+├── App.tsx             # 최상위 애플리케이션 컴포넌트
+├── main.tsx            # 애플리케이션 진입점 (Entry Point)
+└── i18n.ts             # 🌐 i18next 라이브러리 설정 및 초기화 파일
+```
+
+##### Backend
+```shell
+src/main/java/com/forink/forink/
+│
+└── 📁 exam/  # 📝 진단 검사 도메인 예시
+    ├── 📁 api/              # 📥 Presentation Layer: 외부 요청(Request) 및 응답(Response) 처리
+    │   └── ExamController.java
+    ├── 📁 application/      # 🧠 Business Layer: 핵심 비즈니스 로직 수행
+    │   ├── 📁 dto/          #      - 계층 간 데이터 전송 객체 (Request/Response DTO)
+    │   └── ExamService.java
+    └── 📁 entity/            # 📦 Data Layer: 데이터베이스와 직접 통신
+        ├── 📁 dao/          #      - 데이터 접근 객체 (Repository)
+        │   └── ExamRepository.java
+        └── Exam.java        #      - 데이터베이스 테이블과 매핑되는 객체 (JPA Entity)
+
+... 아래 모듈들도 같은 계층 구조
+
+├── 💬 chat/           # 챗봇 관련 API 및 로직
+├── 🤝 guide/          # 가이드 매칭 및 관리 API
+├── 👤 member/         # 회원 및 인증/인가 API
+├── 📑 resume/         # 이력서 관리 API
+├── 🗺️ roadmap/        # 로드맵 생성 및 관리 API
+│
+└── 🌍 global/         # 모든 도메인에서 사용하는 공통 모듈
+    ├── 🤖 ai/          # 외부 AI 서비스 연동
+    ├── ⚙️ config/     # 애플리케이션 주요 설정 (JPA, Security, Web3j 등)
+    ├── ⚠️ error/      # 전역 예외 처리
+    └── 🛡️ security/   # 인증/인가 로직 (JWT, OAuth)
+```
+
+##### AI
+```shell
+codes/
+├── 📁 document_parsing_from_book/ # 📚 외부 문서(책)를 파싱하여 RAG 지식베이스 구축
+│   ├── 📄 0_document_parser.ipynb    # 원본 문서 파싱 및 텍스트 추출
+│   └── 📄 1_chunk_making_with_question_add.ipynb # 텍스트를 청크로 분할 및 질문/답변 쌍 생성
+├── 📁 make_complete_roadmap/      # 🗺️ 사용자 진단 결과 기반 로드맵 생성 로직
+│   ├── 📄 main.ipynb                 # 로드맵 생성 메인 프로세스
+│   └── 📄 loadmap_blocks_db_upload.py # 생성된 로드맵 블록을 DB에 업로드
+├── 📁 routers/                   # 📡 백엔드 서버와 통신하는 API 라우터 (FastAPI/Flask)
+│   ├── 📄 router.py                  # API 엔드포인트 정의
+│   └── 📄 config.py                   # API 서버 설정
+│
+├── 📄 searching_engine_with_storage_data.py # 🧠 벡터 스토리지 기반 검색 엔진
+├── 📄 bfwc_crawled_data.csv       # 📊 크롤링된 원본 데이터 (부산국제교류재단 등)
+├── 📄 extracted_articles.json     # 📑 정제 및 추출된 데이터
+└── 📄 requirements.txt            # 📦 Python 패키지 의존성 목록
+```
+
+##### Blockchain
+```shell
+forink-contracts
+├── 📜 src/            # Solidity 스마트 컨트랙트 소스 코드
+│   └── GuideVerification.sol # 가이드 인증 및 평가 로직
+├── 🧪 test/           # 스마트 컨트랙트 테스트 코드
+├── 🚀 script/         # 배포 및 상호작용 스크립트
+├── 📄 docs/           # API 및 기술 문서
+├── .github/         # CI/CD (GitHub Actions) 설정
+└── foundry.toml     # Foundry 프로젝트 설정 파일
+```
 
 ### 4. 설치 및 사용 방법
 ##### Frontend
