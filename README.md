@@ -90,7 +90,11 @@ _**다국어 지원**_: 사용자의 언어 설정에 맞춰 다국어로 소통
 
 ### 2. 상세설계
 #### 2.1. 시스템 구성도
+##### Architecture</br>
 <img width="14784" height="11900" alt="service_archi_diagram" src="https://github.com/user-attachments/assets/bb1ed067-59e4-445a-90fc-ee34bb5a4920" />
+
+##### ERD</br>
+<img width="723" height="882" alt="forink db erd" src="https://github.com/user-attachments/assets/937b9be7-69b8-4642-aca8-abceb21eefa1" />
 
 #### 2.1. 사용 기술
 ##### Frontend
@@ -153,9 +157,6 @@ _**다국어 지원**_: 사용자의 언어 설정에 맞춰 다국어로 소통
     <summary>토글을 클릭하여 간단한 플로우 차트를 확인해보세요.</summary>
       <img width="771" height="1011" alt="forink drawio" src="https://github.com/user-attachments/assets/0e63eeeb-131a-4c62-9228-cfa7d13eeea2" />
   </details>
-
-- ERD</br>
-  <img width="723" height="882" alt="forink db erd" src="https://github.com/user-attachments/assets/937b9be7-69b8-4642-aca8-abceb21eefa1" />
 
 #### 3.2. 기능설명
 `진단 검사 페이지`
