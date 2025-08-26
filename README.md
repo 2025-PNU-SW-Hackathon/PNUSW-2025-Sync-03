@@ -154,7 +154,7 @@ _**다국어 지원**_: 사용자의 언어 설정에 맞춰 다국어로 소통
       <img width="771" height="1011" alt="forink drawio" src="https://github.com/user-attachments/assets/0e63eeeb-131a-4c62-9228-cfa7d13eeea2" />
   </details>
 
-- ERD
+- ERD</br>
   <img width="723" height="882" alt="forink db erd" src="https://github.com/user-attachments/assets/937b9be7-69b8-4642-aca8-abceb21eefa1" />
 
 #### 3.2. 기능설명
