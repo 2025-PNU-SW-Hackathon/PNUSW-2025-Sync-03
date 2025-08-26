@@ -1,3 +1,4 @@
+# ForinK🌿: 외국인 맞춤형 정착 지원 서비스
 <img width="1200" height="300" alt="forink_preview (2)" src="https://github.com/user-attachments/assets/f15c10f3-aef5-40de-984d-594fbeba7e0d" />
 
 ### 1. 프로젝트 소개
