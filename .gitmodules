@@ -4,3 +4,9 @@
 [submodule "forink-back"]
 	path = forink-back
 	url = https://github.com/For-In-K/forink-back.git
+[submodule "forink-ai"]
+	path = forink-ai
+	url = https://github.com/For-In-K/forink-ai.git
+[submodule "forink-contracts"]
+	path = forink-contracts
+	url = https://github.com/For-In-K/forink-contracts.git
